@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: #000000;
+    --background-color: #808080;
+    --link-color: #955dff;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    margin: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+     transition: all 0.15s ease-in-ease-out;
+
+    &:hover {
+        text-decoration: underline;
+         transition: all 0.15s ease-in-ease-out;
+    }
+}
