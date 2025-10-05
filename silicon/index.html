@@ -154,19 +154,33 @@
          darkToggle.addEventListener('click', function () {
             document.body.classList.toggle('darkmode');
             darkToggle.classList.toggle('on');
-            // Toggle CSS variables for dark mode
+            // Toggle CSS variables for dark mode (set semantic variables so entire UI updates)
             if (document.body.classList.contains('darkmode')) {
                document.documentElement.style.setProperty('--color-body-background', '#18181b');
                document.documentElement.style.setProperty('--color-body-text', '#e5e7eb');
                document.documentElement.style.setProperty('--color-heading-text', '#fafafa');
                document.documentElement.style.setProperty('--color-button-background', '#6366F1');
+               document.documentElement.style.setProperty('--color-button-text', '#ffffff');
                document.documentElement.style.setProperty('--color-button-download-background', '#6366F1');
+               document.documentElement.style.setProperty('--color-button-download-text', '#ffffff');
+               document.documentElement.style.setProperty('--color-darkmode-btn-bg', '#4b5563');
+               document.documentElement.style.setProperty('--color-darkmode-btn-text', '#ffffff');
+               document.documentElement.style.setProperty('--color-login-container-bg', '#0b0f19');
+               document.documentElement.style.setProperty('--color-login-box-bg', '#0b0f19');
+               document.documentElement.style.setProperty('--brand-item-bg', '#0f1724');
             } else {
                document.documentElement.style.setProperty('--color-body-background', '#ffffff');
                document.documentElement.style.setProperty('--color-body-text', '#565973');
                document.documentElement.style.setProperty('--color-heading-text', '#0b0F19');
                document.documentElement.style.setProperty('--color-button-background', 'var(--primary)');
+               document.documentElement.style.setProperty('--color-button-text', '#ffffff');
                document.documentElement.style.setProperty('--color-button-download-background', '#0b0F19');
+               document.documentElement.style.setProperty('--color-button-download-text', '#ffffff');
+               document.documentElement.style.setProperty('--color-darkmode-btn-bg', '#e5e7eb');
+               document.documentElement.style.setProperty('--color-darkmode-btn-text', '#18181b');
+               document.documentElement.style.setProperty('--color-login-container-bg', '#ededed');
+               document.documentElement.style.setProperty('--color-login-box-bg', '#ffffff');
+               document.documentElement.style.setProperty('--brand-item-bg', '#f7f7fa');
             }
          });
 
