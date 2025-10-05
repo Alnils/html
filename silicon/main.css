@@ -365,6 +365,52 @@ h6 {
 
 /* NEW CODE OR CHANGES HERE */
 
+/* Brands Section */
+.Brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 0 2.5rem 0;
+    background: #fff;
+}
+
+.Brands .brand-list {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.Brands .brand-item {
+    background: #f7f7fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.04);
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    min-width: 120px;
+    min-height: 64px;
+    transition: box-shadow 0.2s;
+}
+
+.Brands .brand-item:hover {
+    box-shadow: 0 4px 16px rgba(99,102,241,0.10);
+}
+
+.Brands .brand-logo {
+    height: 32px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+.Brands .brand-name {
+    font-size: 1rem;
+    color: #565973;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
 
 
 /* END HERE */
