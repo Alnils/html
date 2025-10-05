@@ -253,10 +253,18 @@ h6 {
     background: #6366F1;
 }
 
-.download-app-icon,
+.download-app-icon {
+    height: 32px;
+    width: auto;
+    grid-area: icon;
+    margin-right: 1rem;
+}
+
 .download-googlePlay-image {
     height: 32px;
     width: auto;
+    grid-area: icon;
+    margin-right: 1rem;
 }
 
 .download-app-text {
