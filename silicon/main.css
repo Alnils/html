@@ -1,14 +1,186 @@
+.darkmode-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e5e7eb;
+    color: #18181b;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-size: 1rem;
+}
+.darkmode-btn .darkmode-icon {
+    width: 24px;
+    height: 24px;
+    background: url('/silicon/assets/darkmode_icon.png') center/cover no-repeat;
+    display: inline-block;
+}
+.darkmode-btn.on {
+    background: #6366F1;
+    color: #fff;
+}
+.darkmode-btn.on .darkmode-icon {
+    filter: invert(1);
+}
+.darkmode-btn .darkmode-label {
+    font-size: 1rem;
+}
+.darkmode {
+    background: #18181b !important;
+}
+.darkmode .hero {
+    background: radial-gradient(circle at 60% 40%, #18181b 0%, #6366F1 60%, #0B0F19 100%);
+}
+.signin-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #6366F1;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.12);
+    border: none;
+    transition: background 0.2s;
+}
+.signin-btn:hover {
+    background: #4f46e5;
+}
+.signin-icon {
+    width: 24px;
+    height: 24px;
+}
+.signin-text {
+    font-size: 1rem;
+    font-weight: 700;
+}
+.header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+.logotype img {
+    height: 48px;
+}
+.settings {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.btn-signin-text {
+    display: none;
+}
+@media (min-width: 768px) {
+    .btn-signin-text {
+        display: inline;
+    }
+}
+.hero {
+    position: relative;
+    padding-top: 5rem;
+    min-height: 600px;
+    overflow: hidden;
+}
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+.hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 60% 40%, #e0e7ff 0%, #6366F1 60%, #0B0F19 100%);
+    opacity: 0.7;
+    z-index: 1;
+}
+.hero-shape {
+    position: absolute;
+    border-radius: 32px;
+    filter: blur(32px);
+    opacity: 0.4;
+    z-index: 2;
+}
+.hero-shape-1 {
+    background: #0B0F19;
+    width: 180px;
+    height: 560px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+}
+.hero-shape-2 {
+    background: #0B0F19;
+    width: 180px;
+    height: 560px;
+    left: 60%;
+    top: 30%;
+    transform: translate(-60%, -30%);
+}
+.hero-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 3;
+}
+.hero-content {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+}
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0B0F19;
+    margin-bottom: 1rem;
+}
+.hero-ingress {
+    font-size: 1.125rem;
+    color: #565973;
+    margin-bottom: 2rem;
+}
+/* ...existing code for hero buttons restored... */
+.hero-image {
+    max-width: 350px;
+    z-index: 3;
+}
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(99,102,241,0.15);
+}
 /* This is version 0.1 of the file: main.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 
 *, *::before, *::after {
+    .hero {
     box-sizing: border-box;
 }
 
 :root {
     --primary: #6366F1;
+    .hero-bg {
 
     --color-body-text: #565973;
     --color-body-background: #ffffff;
@@ -17,6 +189,7 @@
     --link-color: #955dff;
 
     --color-button-text: #ffffff;
+    .hero-gradient {
     --color-button-background: var(--primary);
     --color-button-hover-background: #4f46e5;
     --color-button-hover-text: #ffffff;
@@ -26,12 +199,14 @@
     --color-button-download-text: #ffffff;
     --color-button-download-background: #0b0F19;
     --color-button-download-hover-background: #0b0F19;
+    .hero-shape {
     
 
 }
 
 html, body {
     scroll-behavior: smooth;
+    .hero-shape-1 {
 
     color: var(--text-color);
     background-color: var(--background-color);
@@ -39,6 +214,7 @@ html, body {
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
+    .hero-shape-2 {
     line-height: 1.5;
 
 }
@@ -46,6 +222,7 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
     color: var(--heading-text-color);
     margin: 0 0 1rem 0;
+    .hero .container, .hero-area, .hero-content, .hero-image {
     font-weight: 700;
     line-height: 1.2;
 }
