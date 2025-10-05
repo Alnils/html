@@ -1,369 +1,752 @@
-/* This is version 0.1 of the file: main.css */
+/* 
+
+ADD NEW STYLES CLOSE TO RELATED STYLES IF RELATED STYLES EXIST
+STACK RELATED STYLES TOGETHER FOR BETTER READABILITY IF POSSIBLE
+MAKE SURE THE STRUCTURE AND HIERARCHY OF THE CSS FILE IS EASILY READABLE AND COLLAPSABLE BY SECTION, USE index.html FOR REFERENCE IF NEEDED
+
+ */
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
 :root {
     --primary: #6366F1;
-
     --color-body-text: #565973;
     --color-body-background: #ffffff;
     --color-heading-text: #0b0F19;
-
     --link-color: #955dff;
-
     --color-button-text: #ffffff;
     --color-button-background: var(--primary);
     --color-button-hover-background: #4f46e5;
     --color-button-hover-text: #ffffff;
     --color-button-border: transparent;
     --color-button-hover-border: transparent;
-
     --color-button-download-text: #ffffff;
     --color-button-download-background: #0b0F19;
     --color-button-download-hover-background: #0b0F19;
-    
-
+    /* extra semantic variables for components so darkmode can target everything */
+    --color-darkmode-btn-bg: #e5e7eb;
+    --color-darkmode-btn-text: #18181b;
+    --color-login-container-bg: #ededed;
+    --color-login-box-bg: #ffffff;
+    --brand-item-bg: #f7f7fa;
 }
 
-html, body {
-    scroll-behavior: smooth;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-    color: var(--text-color);
-    background-color: var(--background-color);
+html,
+body {
+    scroll-behavior: smooth;
+    color: var(--color-body-text);
+    background-color: var(--color-body-background);
     font-family: "Manrope", sans-serif;
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
-
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-text-color);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-heading-text);
     margin: 0 0 1rem 0;
     font-weight: 700;
     line-height: 1.2;
 }
 
-button, .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    height: 40px;
-
-
-    background-color: var(--color-button-background);
-    color: var(--button-text);
-    border: 1px solid var(--color-button-border);
-    padding: 10px 20px;
-    text-decoration: none;
-
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.15s ease-in-ease-out;
-
-    &:hover {
-        background-color: var(--color-button-hover-background);
-        color: var(--color-button-hover-text);
-        border: 1px solid var(--color-button-hover-border);
-        transition: all 0.15s ease-in-ease-out;
-    }
-
-
-    img {
-        width: auto;
-        height: 100%;
-}
-
-}
-
+/* Header */
 .container {
-    width: 100%;
     max-width: 1320px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-.btn-signin-text {
-    display: none;
-
-    @media (width >= 768px) {
-        display: block;
-    }
+/* Wide container for design-locked sections (no horizontal padding, max width 1296) */
+.container--wide {
+    max-width: 1296px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
 }
 
-.btn-download {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "icon text" "icon store";
-
-    background-color: var(--color-button-download-background);
-    color: var(--color-button-download-text);
-
-
-    .download-app-text {
-        grid-area: text;
-
-    }
-
-    .download-app-icon {
-        grid-area: icon;
-    }
-
-    .download-app-store {
-        grid-area: store;
-    }
-}
-
-.darkmode {
-    display: none;
-
-    @media (width >= 768px) {
-        display: block;
-    }
-}
-
-header {
-    .header-area {
+.header-area {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 0;
+        padding: 1.25rem 0;
+}
 
-        .settings {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;}
-    }
+.logotype img {
+        height: 40px;
+}
+
+.settings {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+}
+
+.signin-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--color-button-background);
+        color: var(--color-button-text);
+        padding: 0.45rem 0.9rem;
+        border-radius: 18px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+        border: none;
+        transition: background 0.18s, transform 0.12s;
+}
+
+.signin-btn:hover {
+        background: var(--color-button-hover-background);
+        transform: translateY(-1px);
+}
+
+.signin-icon {
+        width: 22px;
+        height: 22px;
+}
+
+.signin-text {
+        font-size: 0.95rem;
+        font-weight: 700;
+}
+
+.darkmode-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--color-darkmode-btn-bg);
+        color: var(--color-darkmode-btn-text);
+        border: none;
+        border-radius: 18px;
+        padding: 0.45rem 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.18s, color 0.18s, transform 0.12s;
+        font-size: 0.95rem;
+}
+
+.darkmode-btn .darkmode-icon {
+    width: 24px;
+    height: 24px;
+    background: url('/silicon/assets/darkmode_icon.png') center/cover no-repeat;
+    display: inline-block;
+}
+
+/* Use header toggle images and swap in darkmode via CSS */
+.toggle-icon { width:22px; height:22px; display:inline-block; }
+.darkmode .toggle-icon { content: url('/silicon/assets/Header/toggle_icon_darkmode.svg'); }
+.darkmode .logotype img { content: url('/silicon/assets/Header/silicon_icon_text_darkmode.svg'); }
+
+.darkmode-btn.on {
+    background: var(--color-button-background);
+    color: var(--color-button-text);
+}
+
+.darkmode-btn.on .darkmode-icon {
+    filter: invert(1);
+}
+
+.darkmode-btn .darkmode-label {
+    font-size: 1rem;
+}
+
+/* Darkmode helper (body gets .darkmode class; colors mapped with variables) */
+.darkmode {
+    background: var(--color-body-background) !important;
+}
+
+.darkmode .hero {
+    background: radial-gradient(circle at 60% 40%, #18181b 0%, var(--primary) 60%, #0B0F19 100%);
 }
 
 
-a {
-    color: var(--link-color);
+/* Login / Register html page styles */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-login-container-bg);
+}
+
+.login-box {
+    background: var(--color-login-box-bg);
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(99, 102, 241, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+}
+
+.login-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.login-box form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-box label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #565973;
+}
+
+.login-box input {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #6366F1;
+}
+
+.login-box .signin-btn,
+.login-box .signup-btn {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    /* use variables so login buttons follow darkmode */
+    background: var(--color-button-background);
+    color: var(--color-button-text);
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
     text-decoration: none;
-     transition: all 0.15s ease-in-ease-out;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+    transition: background 0.2s, color 0.2s;
+}
 
-    &:hover {
-        text-decoration: underline;
-         transition: all 0.15s ease-in-ease-out;
+.login-box .signin-btn:hover,
+.login-box .signup-btn:hover {
+    background: var(--color-button-hover-background);
+    color: var(--color-button-hover-text);
+}
+
+/* Hero */
+.hero {
+        position: relative;
+        padding-top: 3.5rem;
+        padding-bottom: 2.25rem;
+        min-height: 520px;
+        overflow: hidden;
+        background: var(--color-body-background);
+}
+
+    /* Hero adjustments */
+    .hero-title { font-size: 3.6rem; font-weight: 900; color: var(--color-heading-text); margin-bottom: 0.125rem; letter-spacing: -0.015em; text-shadow: 0 6px 20px rgba(11,15,25,0.08); }
+    .hero-ingress { font-size: 1.125rem; color: var(--color-body-text); margin-bottom: 0.75rem; max-width: 560px; }
+    .hero-buttons { display: flex; gap: 1.25rem; margin-top: 1rem; }
+    .btn-download { display: grid; grid-template-columns: 56px 1fr; grid-template-areas: "icon text" "icon store"; background-color: var(--color-button-download-background); color: var(--color-button-download-text); border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 6px 20px rgba(16,24,40,0.06); transition: background .16s, transform .12s; align-items: center; padding: 0.5rem 1rem; column-gap: 0.8rem; width: 180px; height: 52px; }
+    .download-app-icon { height: 28px; width: auto; grid-area: icon; justify-self: center; }
+    .download-googlePlay-image { height: 28px; width: auto; grid-area: icon; justify-self: center; }
+    .download-app-store { grid-area: store; font-size: 1.05rem; font-weight: 800; line-height: 1; }
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 60% 40%, #ededed 0%, #ededed 100%);
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-shape {
+    position: absolute;
+    border-radius: 32px;
+    filter: blur(32px);
+    opacity: 0.4;
+    z-index: 2;
+}
+
+.hero-shape-1 {
+    background: #0B0F19;
+    width: 180px;
+    height: 560px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+}
+
+.hero-shape-2 {
+    background: #0B0F19;
+    width: 180px;
+    height: 560px;
+    left: 60%;
+    top: 30%;
+    transform: translate(-60%, -30%);
+}
+
+.hero-area {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3.5rem;
+        position: relative;
+        z-index: 3;
+}
+
+.hero-content {
+        max-width: 560px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+}
+
+.hero-title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--color-heading-text);
+        margin-bottom: 0.125rem;
+        letter-spacing: -0.01em;
+}
+
+.hero-ingress {
+        font-size: 1.125rem;
+        color: var(--color-body-text);
+        margin-bottom: 0.5rem;
+        max-width: 520px;
+}
+
+.hero-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.25rem;
+}
+
+.btn-download {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        grid-template-areas: "icon text" "icon store";
+        background-color: var(--color-button-download-background);
+        color: var(--color-button-download-text);
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+        transition: background 0.16s, transform 0.12s;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        column-gap: 0.6rem;
+}
+
+.btn-download:hover {
+    background: var(--color-button-download-hover-background);
+}
+
+.download-app-icon {
+        height: 32px;
+        width: auto;
+        grid-area: icon;
+        justify-self: center;
+}
+
+
+.download-googlePlay-image {
+        height: 32px;
+        width: auto;
+        grid-area: icon;
+        justify-self: center;
+}
+
+.download-app-text {
+        grid-area: text;
+        font-size: 0.62rem;
+        line-height: 1;
+        opacity: 0.95;
+        color: rgba(255,255,255,0.92);
+}
+
+.download-app-store {
+        grid-area: store;
+        font-size: 1.15rem;
+        font-weight: 800;
+        line-height: 1;
+}
+
+.btn-googlePlay-text-small {
+    grid-area: text;
+    font-size: 0.65rem;
+    line-height: 1;
+}
+
+.btn-googlePlay-text {
+    grid-area: store;
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Make the text block line up better with the icon visually by ensuring left alignment */
+.btn-download > .download-app-text,
+.btn-download > .btn-googlePlay-text-small,
+.btn-download > .download-app-store,
+.btn-download > .btn-googlePlay-text {
+    text-align: left;
+}
+
+/* Slightly reduce gap between ingress and buttons (desktop too) */
+@media (min-width: 769px) {
+    .hero-ingress { margin-bottom: 0.75rem; }
+    .hero-buttons { margin-top: 0.25rem; }
+}
+
+.hero-image {
+        max-width: 480px;
+        z-index: 3;
+}
+    .hero-image { max-width: 648px; flex: 0 0 50%; z-index: 3; }
+    .hero-image img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(99,102,241,0.12); }
+
+.hero-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(99, 102, 241, 0.12);
+}
+
+
+/* Brands Section */
+.Brands {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        background: var(--color-body-background);
+}
+    .Brands .brand-item { display: flex; align-items: center; justify-content: center; }
+    .Brands .brand-box { width: 196px; height: 100px; background: #ffffff; border: 1px solid #d1d5db; display: flex; align-items: center; justify-content: center; border-radius: 8px; padding: 8px; box-sizing: border-box; }
+    .Brands .brand-logo { max-width: 180px; max-height: 84px; width: auto; height: auto; }
+
+.Brands .brand-list {
+        display: flex;
+        gap: 1.5rem;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+}
+
+.Brands .brand-item {
+        background: var(--brand-item-bg);
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.04);
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        min-width: 110px;
+        min-height: 56px;
+        transition: box-shadow 0.18s;
+        flex: 0 1 auto;
+        box-sizing: border-box;
+}
+
+/* Responsive: icon-only buttons on small screens */
+@media (max-width: 768px) {
+    .signin-text,
+    .darkmode-label {
+        display: none !important;
+    }
+
+    .signin-btn,
+    .darkmode-btn {
+        padding: 0.4rem 0.5rem;
+        width: auto;
+        border-radius: 999px;
+        gap: 0;
+    }
+
+    .signin-icon,
+    .darkmode-icon {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+    }
+
+    /* Make download buttons more compact on small screens */
+    .btn-download {
+        padding: 0.5rem 0.75rem;
+        column-gap: 0.5rem;
+    }
+
+    .download-app-text,
+    .btn-googlePlay-text-small {
+        font-size: 0.65rem;
+    }
+
+    .download-app-store,
+    .btn-googlePlay-text {
+        font-size: 0.95rem;
     }
 }
 
-img {
+.Brands .brand-item:hover {
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.10);
+}
+
+.Brands .brand-logo {
+    height: 32px;
+    width: auto;
     max-width: 100%;
+    max-height: 32px;
+    margin-right: 1rem;
+    object-fit: contain;
+    display: block;
+}
+
+.Brands .brand-name {
+    font-size: 1rem;
+    color: var(--color-body-text);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+/* Features utilities */
+.section-title {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-heading-text);
+        margin-bottom: 0.5rem;
+}
+
+.section-lead {
+        font-size: 1.05rem;
+        color: var(--color-body-text);
+        margin-bottom: 1rem;
+        max-width: 700px;
+}
+
+/* Features */
+.Features .features-grid,
+.AppFeatures .appfeatures-grid {
+        display: grid;
+        grid-template-columns: 1fr 520px;
+        gap: 2.25rem;
+        align-items: center;
+        padding: 3rem 0;
+}
+.Features .features-grid { display: grid; grid-template-columns: 348px 1fr; gap: 2.25rem; align-items: center; padding: 3rem 0; }
+.AppFeatures .appfeatures-grid { display: grid; grid-template-columns: 1fr 520px 1fr; gap: 2.25rem; align-items: center; padding: 3rem 0; }
+.Features .features-image img { width: 348px; height: 684px; object-fit: cover; border-radius: 12px; }
+.AppFeatures .appfeatures-image img { width: 500px; height: 500px; object-fit: cover; border-radius: 12px; }
+
+.Features .features-image img,
+.AppFeatures .appfeatures-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.feature-items,
+.appfeature-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.feature-items li,
+.appfeature-items li {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.feature-items img,
+.appfeature-items img {
+        width: 48px;
+        height: 48px;
+}
+.feature-items img, .appfeature-items img { width: 36px; height: 36px; }
+
+/* How-Does-It-Work */
+.How-Does-It-Work .how-grid {
+        display: grid;
+        grid-template-columns: 1fr 480px;
+        gap: 2rem;
+        align-items: center;
+        padding: 3rem 0;
+}
+
+.How-Does-It-Work .how-image {
+    width: 100%;
     height: auto;
 }
 
-.hero {
-    background: #fffffe;
-    background: linear-gradient(180deg,rgba(255, 255, 255, .07) 0%, rgba(218, 79, 239, 9.95) 42%, Urgba(99, 192, 241, 9.97) 83%);
-    padding-top: 5rem;
+.how-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-    .hero-area {
+.how-steps li {
+    margin-bottom: 1rem;
+}
+
+/* AppFeatures
+goes under here! */
+
+
+
+
+/* Testimonials */
+.Testimonials .testimonials-grid {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-        
-        @media (width >= 768px) {
-            grid-template-columns: 1fr 1fr;
-            text-align: left;
-            gap: 5rem;
-        }
-        
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 3rem 0;
+}
+    .Testimonials .testimonials-grid { display: flex; gap: 2rem; justify-content: center; align-items: center; padding: 3rem 0; }
+    .testimonial-card { width: 416px; height: 326px; position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 20px 60px rgba(16,24,40,0.06); background: #fff; }
+    .testimonial-card .testimonial-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .testimonial-card .quote-overlay { position: absolute; top: 12px; left: 12px; width: 72px; height: 72px; }
+    .testimonial-card .quote-overlay img { width: 100%; height: 100%; display: block; }
 
-            .hero-title {
-                font-size: 56px;
-                font-weight: 800;
-                
-            }
-            .hero-ingerss {
-                font-size: 18px;
-                font-weight: 400;
-            }
-        }
-
-        .hero-image {
-
-        }
-    }
+.testimonial {
+        background: var(--color-login-box-bg);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 36px rgba(16,24,40,0.06);
 }
 
-
-/* 
-.box {
-        background-color: Ialiceblue;
-        border: 1px solid rgb(221, 228, 234);
+.testimonial img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin-bottom: 0.75rem;
 }
 
-.flex {
-        
-        background-color: #ea6969;
-        border: 6px solid red;
-        height: 20dvh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.testimonial p {
+    margin: 0 0 0.5rem 0;
+    color: var(--color-body-text);
 }
 
-.header {
-        background-color: rgb(150, 150, 150);
-        border: 6px solid red;
-        height: 20dvh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-}
-.hero {
-        background-color: rgb(223, 236, 101);
-        border: 6px solid red;
-        height: 20dvh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-}
-.brands {
-        background-color: rgb(101, 223, 236)
-}   
-.features {
-        background-color: rgb(101, 236, 223)
-}
-.How-Does-It-Work {
-        background-color: rgb(236, 101, 223)
-}
-.appfeatures {
-        background-color: rgb(223, 101, 236)
-}
-.testimonials {
-        background-color: rgb(236, 223, 101)
-}
-.faq {
-        background-color: rgb(101, 236, 101)
-}
-.subscribe {
-        background-color: rgb(101, 101, 236)
-}
-.footer {
-        background-color: rgb(236, 101, 101)
+.testimonial cite {
+    font-size: 0.9rem;
+    color: var(--color-body-text);
 }
 
- .header {
-        background-color: rgb(150, 150, 150);
-        border-bottom: 1px solid rgb(221, 228, 234);
-        padding: 1rem 2rem;
-        position: sticky;
-        top: 0;
-        z-index: 100;
+/* FAQ */
+.FAQ .faq-list details {
+        background: var(--color-login-box-bg);
+        padding: 1rem 1.15rem;
+        border-radius: 10px;
+        margin-bottom: 0.9rem;
 }
-.header .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--link-color);
-}
-.header nav a {
-        margin-left: 2rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 0.875rem;
-        letter-spacing: 0.05em;
-        color: var(--text-color);
-        transition: all 0.15s ease-in-ease-out;
-}
-.header nav a:hover {
-        color: var(--link-color);
-        transition: all 0.15s ease-in-ease-out;
-} */
+    .FAQ .faq-list { display: flex; gap: 1.5rem; align-items: center; }
+    .FAQ .faq-left { flex: 1; }
+    .FAQ .faq-right { flex: 1; }
+    .FAQ .faq-right details { background: var(--color-login-box-bg); padding: 1rem 1.15rem; border-radius: 10px; margin-bottom: 0.9rem; }
 
-/* Hero Section 
-.hero {
-        padding: 4rem 2rem;
-        text-align: center;
-}           
-.hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-}   
-.hero p {
-        font-size: 1.125rem;
-        margin-bottom: 2rem;
-        color: var(--text-color);
-}   
-.hero .btn {
-        background-color: var(--link-color);
-        color: #fff;
-        padding: 0.75rem 1.5rem;
-        border: none;
-        border-radius: 4px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-}
-
-.hero .btn:hover {
-        background-color: darken(var(--link-color), 10%);
-}
-/* Responsive 
-@media (min-width: 768px) {
-    .hero h1 {
-        font-size: 3.5rem;
-    }
-    .hero p {
-        font-size: 1.25rem;
-    }
-}
-@media (min-width: 1024px) {
-    .hero {
-        padding: 6rem 4rem;
-    }
-}
-/* Utility Classes 
-.text-center {
-    text-align: center;
-}   
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-.section {
-    padding: 4rem 0;
-}       
-.section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-.section p {
-    font-size: 1.125rem;
-    color: var(--text-color);
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
-}
-.section .btn {
-    background-color: var(--link-color);
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+.FAQ summary {
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: 700;
 }
-.section .btn:hover {
-    background-color: darken(var(--link-color), 10%);
+
+/* Subscribe */
+.Subscribe .subscribe-box {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 0;
+        background: transparent;
 }
-Header */
+    .Subscribe .subscribe-box { display: flex; gap: 1.25rem; align-items: center; justify-content: space-between; padding: 2rem 0; background: transparent; }
+
+.subscribe-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.subscribe-form input[type="email"] {
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        border: 1px solid #e9e9ef;
+        min-width: 280px;
+}
+
+/* Footer */
+
+.site-footer {
+        padding: 2rem 0;
+        background: var(--color-login-container-bg);
+}
+    .site-footer { padding: 2rem 0; background: var(--color-login-container-bg); }
+    .footer-grid.center { display: flex; justify-content: center; }
+    .footer-grid.center .footer-col { text-align: center; }
+
+.footer-grid {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-col nav a {
+    margin-right: 1rem;
+    color: var(--color-body-text);
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .Features .features-grid,
+    .How-Does-It-Work .how-grid,
+    .AppFeatures .appfeatures-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-grid { flex-direction: column; gap: 1rem; }
+    .Subscribe .subscribe-box { flex-direction: column; gap: 1rem; }
+}
+

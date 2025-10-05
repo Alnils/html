@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,35 +10,36 @@
    <link rel="stylesheet" href="/silicon/main.css">
    <title>AN - Silicon Inc.</title>
 </head>
+
 <body>
 
-   
-   <!-- Header -->
 
+   <!-- Header -->
    <header>
-      <div class="container"></div>>
+      <div class="container">
          <div class="header-area">
             <div class="logotype">
                <a href="index.html">
-                  <img src="/silicon/assets/silicon_icon_text.svg" alt="Silicon Inc. Logo">
+                  <img id="site-logo" src="/silicon/assets/Header/silicon_icon_text.svg" alt="Silicon Inc. Logo">
                </a>
             </div>
             <div class="settings">
-               <div class="darkmode">
-                  <img src="/silicon/assets/darkmode_icon.png" alt="Dark Mode Icon">
-               </div>
+               <button id="darkmode-toggle" class="darkmode-btn" aria-label="Toggle dark mode">
+                  <span class="darkmode-label">Dark Mode</span>
+                  <img class="toggle-icon" src="/silicon/assets/Header/toggle_icon_light.svg" alt="toggle">
+               </button>
                <div class="User_menu">
-                  <a href="login.html" class="btn">
-                     <img src="/silicon/assets/user_icon.svg" alt="User Icon">
-                     <span class="btn-signin-text">Sign In</span>
-                  </a>  
+                  <a href="login.html" class="signin-btn rectangular">
+                     <img src="/silicon/assets/Header/user_icon.svg" alt="User Icon" class="signin-icon">
+                     <span class="signin-text">Sign in / up</span>
+                  </a>
                </div>
             </div>
          </div>
-      </div>   
+      </div>
    </header>
 
-   
+
    <!-- Hero -->
 
    <section id="Hero" class="hero">
@@ -45,84 +47,288 @@
          <div class="hero-area">
             <div class="hero-content">
                <h1 class="hero-title">Manage all your money in one app</h1>
-               <p class="hero-ingress">Our app helps you track your expenses, create budgets, and achieve your financial goals with ease.</p>
+               <p class="hero-ingress">We offer you a new generation of the mobile banking. Save, spend & manage money in your pocket.</p>
                <div class="hero-buttons">
-                  <a href="#" class="btn-download">
-                     <p class="download-app-text">Download on the</p>
-                     <img class="download-app-icon" src="/silicon/assets/appStore_icon.svg" alt="Apple Icon">
-                     <p class="download-app-store">App Store</p>
+                  <a href="#" class="btn-download appstore">
+                     <img class="download-app-icon" src="/silicon/assets/AppFeatures/icons/credit-card.svg" alt="Apple Icon">
+                     <div class="download-text">
+                        <div class="download-app-text">Download on the</div>
+                        <div class="download-app-store">App Store</div>
+                     </div>
                   </a>
-                  <a href="#" class="btn-download">
-                     <p class="btn-googlePlay-text-small">Get it on</p>
-                     <img class="download-googlePlay-image" src="/silicon/assets/googlePlay_icon.svg" alt="googlePlay Icon">
-                     <p class="btn-googlePlay-text">Google Play</p>
+                  <a href="#" class="btn-download googleplay">
+                     <img class="download-googlePlay-image" src="/silicon/assets/AppFeatures/icons/wallet.svg" alt="Google Play Icon">
+                     <div class="download-text">
+                        <div class="btn-googlePlay-text-small">Get it on</div>
+                        <div class="btn-googlePlay-text">Google Play</div>
+                     </div>
                   </a>
                </div>
             </div>
-
             <div class="hero-image">
-               <img src="/silicon/assets/hero_image.svg" alt="Hero Image">
+               <img src="/silicon/assets/Features/phone_image.svg" alt="Hero Image">
             </div>
          </div>
       </div>
-   </section>
-   
-   <!-- Brands -->
 
-   <div class="flex Brands">
-      <div class="box">Brands</div>
-   </div>
-   
-   
-   <!-- Features -->
+      <!-- Brands -->
 
-   <div class="flex Features">
-      <div class="box">Features</div>
-   </div>
-
-   
-   <!-- How-Does-It-Work -->
-
-   <div class="flex How-Does-It-Work">
-      <div class="box">How-Does-It-Work</div>
-   </div>
-
-   
-   <!-- AppFeatures -->
-
-   <div class="flex AppFeatures">
-      <div class="box">AppFeatures</div>
-   </div>
-
-   
-   <!-- Testimonials -->
-
-   <div class="flex Testimonials">
-      <div class="box">Testimonials</div>
-   </div>
-   
-   
-   <!-- FAQ -->
-
-   <div class="flex FAQ">
-      <div class="box">FAQ</div>
-   </div>
-   
-   
-   <!-- Subscribe -->
-
-   <div class="flex Subscribe">
-      <div class="box">Subscribe</div>
-   </div>
-
-   
-   <!-- Footer     -->
-
-   <footer>
-      <div class="box">Footer</div>
-   </footer>
+      <section class="Brands">
+         <div class="brand-list container--wide">
+            <div class="brand-item">
+               <div class="brand-box"><img src="/silicon/assets/Brands/logoipsum-1.svg" alt="Logoipsum 1" class="brand-logo"></div>
+            </div>
+            <div class="brand-item">
+               <div class="brand-box"><img src="/silicon/assets/Brands/logoipsum-2.svg" alt="Logoipsum 2" class="brand-logo"></div>
+            </div>
+            <div class="brand-item">
+               <div class="brand-box"><img src="/silicon/assets/Brands/logoipsum-3.svg" alt="Logoipsum 3" class="brand-logo"></div>
+            </div>
+            <div class="brand-item">
+               <div class="brand-box"><img src="/silicon/assets/Brands/logoipsum-4.svg" alt="Logoipsum 4" class="brand-logo"></div>
+            </div>
+            <div class="brand-item">
+               <div class="brand-box"><img src="/silicon/assets/Brands/logoipsum-5.svg" alt="Logoipsum 5" class="brand-logo"></div>
+            </div>
+         </div>
+      </section>
 
 
-   
+      <!-- Features -->
+
+      <section class="Features">
+         <div class="container">
+            <div class="features-grid">
+               <div class="features-image">
+                  <img src="/silicon/assets/Features/phone_image.svg" alt="Phone feature" />
+               </div>
+               <div class="features-list">
+                  <h2 class="section-title">Powerful features to manage your money</h2>
+                  <p class="section-lead">Everything you need to budget, save and spend with confidence — all in one app.</p>
+                  <ul class="feature-items">
+                     <li>
+                        <img src="/silicon/assets/Features/icons/credit-card.svg" alt="credit card" />
+                        <div>
+                           <strong>Smart payments</strong>
+                           <div class="muted">Fast, secure and trackable</div>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="/silicon/assets/Features/icons/wallet.svg" alt="wallet" />
+                        <div>
+                           <strong>Manage wallets</strong>
+                           <div class="muted">Multiple accounts in one place</div>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="/silicon/assets/Features/icons/shield.svg" alt="shield" />
+                        <div>
+                           <strong>Secure by default</strong>
+                           <div class="muted">Bank-grade encryption</div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <!-- How-Does-It-Work -->
+
+
+      <section class="How-Does-It-Work">
+         <div class="container--wide">
+            <h2 class="section-title" style="text-align:center;">How Does It Work?</h2>
+            <div class="how-images">
+               <img src="/silicon/assets/How-Does-It-Work/1.svg" alt="step 1" class="how-img left">
+               <img src="/silicon/assets/How-Does-It-Work/2.svg" alt="step 2" class="how-img middle">
+               <img src="/silicon/assets/How-Does-It-Work/3.svg" alt="step 3" class="how-img right">
+            </div>
+            <div class="how-bottom" style="text-align:center;margin-top:1.5rem;">
+               <h3 class="section-title">Latest transaction history</h3>
+               <p class="section-lead">Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis tristique quisque hac in consectetur condimentum.</p>
+            </div>
+         </div>
+      </section>
+
+
+      <!-- AppFeatures -->
+
+
+      <section class="AppFeatures">
+         <div class="container--wide">
+            <div class="appfeatures-grid">
+               <div class="appfeatures-image left-img">
+                  <img src="/silicon/assets/AppFeatures/image-1.svg" alt="App features 1" />
+               </div>
+               <div class="appfeatures-list">
+                  <h2 class="section-title">App features</h2>
+                  <ul class="appfeature-items">
+                     <li><img src="/silicon/assets/AppFeatures/icons/credit-card.svg" alt="" /><span>Easy payments</span></li>
+                     <li><img src="/silicon/assets/AppFeatures/icons/wallet.svg" alt="" /><span>Wallet management</span></li>
+                     <li><img src="/silicon/assets/AppFeatures/icons/icons/bx-check-circle.svg" alt="" /><span>Verified merchants</span></li>
+                  </ul>
+               </div>
+               <div class="appfeatures-image right-img">
+                  <img src="/silicon/assets/AppFeatures/image-2.svg" alt="App features 2" />
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <!-- Testimonials -->
+
+
+      <section class="Testimonials">
+         <div class="container--wide">
+            <h2 class="section-title">What our users say</h2>
+            <div class="testimonials-grid">
+               <div class="testimonial-card">
+                  <div class="quote-overlay"><img src="/silicon/assets/Testimonials/quotes.svg" alt="quotes"></div>
+                  <img src="/silicon/assets/Testimonials/review-1.svg" alt="review" class="testimonial-img" />
+               </div>
+               <div class="testimonial-card">
+                  <div class="quote-overlay"><img src="/silicon/assets/Testimonials/quotes.svg" alt="quotes"></div>
+                  <img src="/silicon/assets/Testimonials/review.svg" alt="review" class="testimonial-img" />
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <!-- FAQ -->
+
+
+      <section class="FAQ">
+         <div class="container--wide">
+            <h2 class="section-title">Frequently asked questions</h2>
+            <div class="faq-list faq-columns">
+               <div class="faq-left">
+                  <img src="/silicon/assets/FAQ/Group.svg" alt="faq art" style="max-width:100%;" />
+               </div>
+               <div class="faq-right">
+                  <details>
+                     <summary>Is my data secure?</summary>
+                     <p>nobody will ever read this :(</p>
+                  </details>
+                  <details>
+                     <summary>How do I connect my bank?</summary>
+                     <p>nobody will ever read this :(</p>
+                  </details>
+                  <details>
+                     <summary>Can I cancel anytime?</summary>
+                     <p>nobody will ever read this :(</p>
+                  </details>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <!-- Subscribe -->
+
+
+      <section class="Subscribe">
+         <div class="container--wide">
+            <div class="subscribe-box">
+               <h3 class="section-title">Stay updated</h3>
+               <p class="section-lead">Get product news and updates.</p>
+               <form class="subscribe-form">
+                  <input type="email" placeholder="Enter your email" aria-label="Email" />
+                  <button type="submit" class="signin-btn">Subscribe</button>
+               </form>
+            </div>
+         </div>
+      </section>
+
+
+      <!-- Footer     -->
+
+      <footer class="site-footer">
+         <div class="container--wide">
+            <div class="footer-grid center">
+               <div class="footer-col">
+                  <small>© 2025 Silicon. All rights reserved.</small>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+
+
+      <!-- SCRIPTS: START HERE -->
+      <script>
+         // HEADER: Dark Mode Toggle
+         const darkToggle = document.getElementById('darkmode-toggle');
+         darkToggle.addEventListener('click', function () {
+            document.body.classList.toggle('darkmode');
+            darkToggle.classList.toggle('on');
+            // Toggle CSS variables for dark mode (set semantic variables so entire UI updates)
+            if (document.body.classList.contains('darkmode')) {
+               document.documentElement.style.setProperty('--color-body-background', '#18181b');
+               document.documentElement.style.setProperty('--color-body-text', '#e5e7eb');
+               document.documentElement.style.setProperty('--color-heading-text', '#fafafa');
+               document.documentElement.style.setProperty('--color-button-background', '#6366F1');
+               document.documentElement.style.setProperty('--color-button-text', '#ffffff');
+               document.documentElement.style.setProperty('--color-button-download-background', '#6366F1');
+               document.documentElement.style.setProperty('--color-button-download-text', '#ffffff');
+               document.documentElement.style.setProperty('--color-darkmode-btn-bg', '#4b5563');
+               document.documentElement.style.setProperty('--color-darkmode-btn-text', '#ffffff');
+               document.documentElement.style.setProperty('--color-login-container-bg', '#0b0f19');
+               document.documentElement.style.setProperty('--color-login-box-bg', '#0b0f19');
+               document.documentElement.style.setProperty('--brand-item-bg', '#0f1724');
+            } else {
+               document.documentElement.style.setProperty('--color-body-background', '#ffffff');
+               document.documentElement.style.setProperty('--color-body-text', '#565973');
+               document.documentElement.style.setProperty('--color-heading-text', '#0b0F19');
+               document.documentElement.style.setProperty('--color-button-background', 'var(--primary)');
+               document.documentElement.style.setProperty('--color-button-text', '#ffffff');
+               document.documentElement.style.setProperty('--color-button-download-background', '#0b0F19');
+               document.documentElement.style.setProperty('--color-button-download-text', '#ffffff');
+               document.documentElement.style.setProperty('--color-darkmode-btn-bg', '#e5e7eb');
+               document.documentElement.style.setProperty('--color-darkmode-btn-text', '#18181b');
+               document.documentElement.style.setProperty('--color-login-container-bg', '#ededed');
+               document.documentElement.style.setProperty('--color-login-box-bg', '#ffffff');
+               document.documentElement.style.setProperty('--brand-item-bg', '#f7f7fa');
+            }
+         });
+
+         // HERO: (Add hero-specific scripts here if needed)
+
+         // FAQ: ensure only one <details> is open at a time and inject placeholder text
+         (function () {
+            const faqDetails = document.querySelectorAll('.FAQ details');
+            faqDetails.forEach(d => {
+               d.addEventListener('toggle', (e) => {
+                  if (d.open) {
+                     // close others
+                     faqDetails.forEach(o => { if (o !== d) o.open = false; });
+                     // ensure the placeholder text is present
+                     const p = d.querySelector('p');
+                     if (p) p.textContent = 'nobody will ever read this :(';
+                  }
+               });
+            });
+         })();
+
+         // Update darkmode toggle to swap header assets
+         (function () {
+            const logo = document.getElementById('site-logo');
+            const toggleIcon = document.querySelector('.toggle-icon');
+            darkToggle.addEventListener('click', function () {
+               // swap header logo and toggle icon sources based on body.darkmode
+               if (document.body.classList.contains('darkmode')) {
+                  if (logo) logo.src = '/silicon/assets/Header/silicon_icon_text_darkmode.svg';
+                  if (toggleIcon) toggleIcon.src = '/silicon/assets/Header/toggle_icon_darkmode.svg';
+               } else {
+                  if (logo) logo.src = '/silicon/assets/Header/silicon_icon_text.svg';
+                  if (toggleIcon) toggleIcon.src = '/silicon/assets/Header/toggle_icon_light.svg';
+               }
+            });
+         })();
+      </script>
 </body>
+
 </html>
