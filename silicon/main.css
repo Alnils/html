@@ -218,11 +218,12 @@ h6 {
     display: block;
     width: 100%;
     margin-top: 1rem;
-    background: #ededed;
-    color: #6366F1;
+    /* use variables so login buttons follow darkmode */
+    background: var(--color-button-background);
+    color: var(--color-button-text);
     border: none;
     border-radius: 8px;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.9rem;
     font-weight: 700;
     font-size: 1rem;
     text-align: center;
@@ -233,17 +234,17 @@ h6 {
 
 .login-box .signin-btn:hover,
 .login-box .signup-btn:hover {
-    background: #6366F1;
-    color: #fff;
+    background: var(--color-button-hover-background);
+    color: var(--color-button-hover-text);
 }
 
 /* Hero */
 .hero {
     position: relative;
-    padding-top: 5rem;
-    min-height: 600px;
+    padding-top: 3rem; /* reduced top gap */
+    min-height: 420px; /* lower hero height for a tighter hero */
     overflow: hidden;
-    background: #ededed;
+    background: var(--color-body-background);
 }
 
 .hero-bg {
@@ -315,24 +316,24 @@ h6 {
     font-size: 2.5rem;
     font-weight: 800;
     color: var(--color-heading-text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .hero-ingress {
     font-size: 1.125rem;
     color: var(--color-body-text);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1.25rem;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
 }
 
 .btn-download {
     display: grid;
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 40px auto;
     grid-template-areas: "icon text" "icon store";
     background-color: var(--color-button-download-background);
     color: var(--color-button-download-text);
@@ -343,8 +344,8 @@ h6 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: background 0.2s;
     align-items: center;
-    padding: 0.6rem 1rem;
-    column-gap: 0.6rem;
+    padding: 0.45rem 0.9rem;
+    column-gap: 0.5rem;
 }
 
 .btn-download:hover {
@@ -352,7 +353,7 @@ h6 {
 }
 
 .download-app-icon {
-    height: 32px;
+    height: 28px;
     width: auto;
     grid-area: icon;
     justify-self: center;
@@ -360,7 +361,7 @@ h6 {
 
 
 .download-googlePlay-image {
-    height: 32px;
+    height: 28px;
     width: auto;
     grid-area: icon;
     justify-self: center;
@@ -368,27 +369,27 @@ h6 {
 
 .download-app-text {
     grid-area: text;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     line-height: 1;
     opacity: 0.95;
 }
 
 .download-app-store {
     grid-area: store;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 800;
     line-height: 1;
 }
 
 .btn-googlePlay-text-small {
     grid-area: text;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     line-height: 1;
 }
 
 .btn-googlePlay-text {
     grid-area: store;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 800;
     line-height: 1;
 }
@@ -427,7 +428,7 @@ h6 {
     align-items: center;
     gap: 2rem;
     padding: 2.5rem 0 2.5rem 0;
-    background: #fff;
+    background: var(--color-body-background);
 }
 
 .Brands .brand-list {
@@ -508,7 +509,7 @@ h6 {
 
 .Brands .brand-name {
     font-size: 1rem;
-    color: #565973;
+    color: var(--color-body-text);
     font-weight: 600;
     letter-spacing: 0.02em;
     white-space: nowrap;
