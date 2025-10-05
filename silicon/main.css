@@ -1,3 +1,55 @@
+/* START HERE */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    --primary: #6366F1;
+    --color-body-text: #565973;
+    --color-body-background: #ffffff;
+    --color-heading-text: #0b0F19;
+    --link-color: #955dff;
+    --color-button-text: #ffffff;
+    --color-button-background: var(--primary);
+    --color-button-hover-background: #4f46e5;
+    --color-button-hover-text: #ffffff;
+    --color-button-border: transparent;
+    --color-button-hover-border: transparent;
+    --color-button-download-text: #ffffff;
+    --color-button-download-background: #0b0F19;
+    --color-button-download-hover-background: #0b0F19;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    color: var(--color-body-text);
+    background-color: var(--color-body-background);
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-heading-text);
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Header */
 .header-area {
     display: flex;
     justify-content: space-between;
@@ -15,16 +67,81 @@
     gap: 2rem;
 }
 
-.btn-signin-text {
-    display: none;
+.signin-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #6366F1;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
+    border: none;
+    transition: background 0.2s;
 }
 
-@media (min-width: 768px) {
-    .btn-signin-text {
-        display: inline;
-    }
+.signin-btn:hover {
+    background: #4f46e5;
 }
 
+.signin-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.signin-text {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.darkmode-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e5e7eb;
+    color: #18181b;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-size: 1rem;
+}
+
+.darkmode-btn .darkmode-icon {
+    width: 24px;
+    height: 24px;
+    background: url('/silicon/assets/darkmode_icon.png') center/cover no-repeat;
+    display: inline-block;
+}
+
+.darkmode-btn.on {
+    background: #6366F1;
+    color: #fff;
+}
+
+.darkmode-btn.on .darkmode-icon {
+    filter: invert(1);
+}
+
+.darkmode-btn .darkmode-label {
+    font-size: 1rem;
+}
+
+/* Darkmode styles */
+.darkmode {
+    background: #18181b !important;
+}
+
+.darkmode .hero {
+    background: radial-gradient(circle at 60% 40%, #18181b 0%, #6366F1 60%, #0B0F19 100%);
+}
+
+/* Hero */
 .hero {
     position: relative;
     padding-top: 5rem;
@@ -111,7 +228,53 @@
     margin-bottom: 2rem;
 }
 
-/* ...existing code for hero buttons restored... */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn-download {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "icon text" "icon store";
+    background-color: var(--color-button-download-background);
+    color: var(--color-button-download-text);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: background 0.2s;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-download:hover {
+    background: #6366F1;
+}
+
+.download-app-icon,
+.download-googlePlay-image {
+    height: 32px;
+    width: auto;
+}
+
+.download-app-text {
+    grid-area: text;
+}
+
+.download-app-store {
+    grid-area: store;
+}
+
+.btn-googlePlay-text-small {
+    grid-area: text;
+}
+
+.btn-googlePlay-text {
+    grid-area: store;
+}
+
 .hero-image {
     max-width: 350px;
     z-index: 3;
@@ -123,240 +286,3 @@
     border-radius: 32px;
     box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
 }
-
-/* This is version 0.1 of the file: main.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
-
-*,
-*::before,
-*::after {
-    .hero {
-        box-sizing: border-box;
-    }
-
-    :root {
-        --primary: #6366F1;
-        --color-button-text: #ffffff;
-
-        .hero-bg {
-
-            --color-body-text: #565973;
-            --color-body-background: #ffffff;
-            --color-heading-text: #0b0F19;
-
-            --link-color: #955dff;
-        }
-
-
-        .hero-gradient {
-            --color-button-background: var(--primary);
-            --color-button-hover-background: #4f46e5;
-            --color-button-hover-text: #ffffff;
-            --color-button-border: transparent;
-            --color-button-hover-border: transparent;
-
-            --color-button-download-text: #ffffff;
-            --color-button-download-background: #0b0F19;
-            --color-button-download-hover-background: #0b0F19;
-        }
-
-    }
-}
-
-    .signin-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: #6366F1;
-        color: #fff;
-        padding: 0.5rem 1.25rem;
-        border-radius: 20px;
-        font-weight: 700;
-        font-size: 1rem;
-        text-decoration: none;
-        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
-        border: none;
-        transition: background 0.2s;
-    }
-
-    .signin-btn:hover {
-        background: #4f46e5;
-    }
-
-    .signin-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .signin-text {
-        font-size: 1rem;
-        font-weight: 700;
-
-        display: none;
-
-        @media (width >=768px) {
-            display: block;
-        }
-    }
-
-    .darkmode-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: #e5e7eb;
-        color: #18181b;
-        border: none;
-        border-radius: 20px;
-        padding: 0.5rem 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.2s, color 0.2s;
-        font-size: 1rem;
-    }
-
-    .darkmode-btn .darkmode-icon {
-        width: 24px;
-        height: 24px;
-        background: url('/silicon/assets/darkmode_icon.png') center/cover no-repeat;
-        display: inline-block;
-    }
-
-    .darkmode-btn.on {
-        background: #6366F1;
-        color: #fff;
-    }
-
-    .darkmode-btn.on .darkmode-icon {
-        filter: invert(1);
-    }
-
-    .darkmode-btn .darkmode-label {
-        font-size: 1rem;
-    }
-
-    .darkmode {
-        background: #18181b !important;
-    }
-
-    .darkmode .hero {
-        background: radial-gradient(circle at 60% 40%, #18181b 0%, #6366F1 60%, #0B0F19 100%);
-    }
-
-    .container {
-        width: 100%;
-        max-width: 1320px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .btn-download {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-areas: "icon text" "icon store";
-
-        background-color: var(--color-button-download-background);
-        color: var(--color-button-download-text);
-
-
-        .download-app-text {
-            grid-area: text;
-
-        }
-
-        .download-app-icon {
-            grid-area: icon;
-        }
-
-        .download-app-store {
-            grid-area: store;
-        }
-    }
-
-    .darkmode {
-        display: none;
-
-        @media (width >=768px) {
-            display: block;
-        }
-    }
-
-    header {
-        .header-area {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-
-            .settings {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 2rem;
-            }
-        }
-    }
-
-
-    a {
-        color: var(--link-color);
-        text-decoration: none;
-        transition: all 0.15s ease-in-ease-out;
-
-        &:hover {
-            text-decoration: underline;
-            transition: all 0.15s ease-in-ease-out;
-        }
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .hero {
-        background: #fffffe;
-        background: linear-gradient(180deg, rgba(255, 255, 255, .07) 0%, rgba(218, 79, 239, 9.95) 42%, Urgba(99, 192, 241, 9.97) 83%);
-        padding-top: 5rem;
-
-        .hero-area {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            text-align: center;
-
-            @media (width >=768px) {
-                grid-template-columns: 1fr 1fr;
-                text-align: left;
-                gap: 5rem;
-            }
-
-            .hero-content {
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-
-                .hero-title {
-                    font-size: 56px;
-                    font-weight: 800;
-
-                }
-
-                .hero-ingerss {
-                    font-size: 18px;
-                    font-weight: 400;
-                }
-            }
-
-            .hero-image {
-                max-width: 100%;
-                height: auto;
-                border-radius: 32px;
-                box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
-            }
-
-        }
-    }
