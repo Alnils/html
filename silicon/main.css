@@ -70,65 +70,66 @@ h6 {
 }
 
 .header-area {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 0;
 }
 
 .logotype img {
-    height: 48px;
+        height: 40px;
 }
 
 .settings {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
 }
 
 .signin-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--color-button-background);
-    color: var(--color-button-text);
-    padding: 0.5rem 1.25rem;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
-    border: none;
-    transition: background 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--color-button-background);
+        color: var(--color-button-text);
+        padding: 0.45rem 0.9rem;
+        border-radius: 18px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+        border: none;
+        transition: background 0.18s, transform 0.12s;
 }
 
 .signin-btn:hover {
-    background: var(--color-button-hover-background);
+        background: var(--color-button-hover-background);
+        transform: translateY(-1px);
 }
 
 .signin-icon {
-    width: 24px;
-    height: 24px;
+        width: 22px;
+        height: 22px;
 }
 
 .signin-text {
-    font-size: 1rem;
-    font-weight: 700;
+        font-size: 0.95rem;
+        font-weight: 700;
 }
 
 .darkmode-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--color-darkmode-btn-bg);
-    color: var(--color-darkmode-btn-text);
-    border: none;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--color-darkmode-btn-bg);
+        color: var(--color-darkmode-btn-text);
+        border: none;
+        border-radius: 18px;
+        padding: 0.45rem 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.18s, color 0.18s, transform 0.12s;
+        font-size: 0.95rem;
 }
 
 .darkmode-btn .darkmode-icon {
@@ -240,11 +241,12 @@ h6 {
 
 /* Hero */
 .hero {
-    position: relative;
-    padding-top: 3rem; /* reduced top gap */
-    min-height: 420px; /* lower hero height for a tighter hero */
-    overflow: hidden;
-    background: var(--color-body-background);
+        position: relative;
+        padding-top: 3.5rem;
+        padding-bottom: 2.25rem;
+        min-height: 520px;
+        overflow: hidden;
+        background: var(--color-body-background);
 }
 
 .hero-bg {
@@ -295,57 +297,59 @@ h6 {
 }
 
 .hero-area {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
-    position: relative;
-    z-index: 3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3.5rem;
+        position: relative;
+        z-index: 3;
 }
 
 .hero-content {
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: flex-start;
+        max-width: 560px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
 }
 
 .hero-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--color-heading-text);
-    margin-bottom: 0.25rem;
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--color-heading-text);
+        margin-bottom: 0.125rem;
+        letter-spacing: -0.01em;
 }
 
 .hero-ingress {
-    font-size: 1.125rem;
-    color: var(--color-body-text);
-    margin-bottom: 0.5rem;
+        font-size: 1.125rem;
+        color: var(--color-body-text);
+        margin-bottom: 0.5rem;
+        max-width: 520px;
 }
 
 .hero-buttons {
-    display: flex;
-    gap: 1.25rem;
-    margin-top: 0.25rem;
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.25rem;
 }
 
 .btn-download {
-    display: grid;
-    grid-template-columns: 40px auto;
-    grid-template-areas: "icon text" "icon store";
-    background-color: var(--color-button-download-background);
-    color: var(--color-button-download-text);
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: background 0.2s;
-    align-items: center;
-    padding: 0.45rem 0.9rem;
-    column-gap: 0.5rem;
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        grid-template-areas: "icon text" "icon store";
+        background-color: var(--color-button-download-background);
+        color: var(--color-button-download-text);
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+        transition: background 0.16s, transform 0.12s;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        column-gap: 0.6rem;
 }
 
 .btn-download:hover {
@@ -353,32 +357,33 @@ h6 {
 }
 
 .download-app-icon {
-    height: 28px;
-    width: auto;
-    grid-area: icon;
-    justify-self: center;
+        height: 32px;
+        width: auto;
+        grid-area: icon;
+        justify-self: center;
 }
 
 
 .download-googlePlay-image {
-    height: 28px;
-    width: auto;
-    grid-area: icon;
-    justify-self: center;
+        height: 32px;
+        width: auto;
+        grid-area: icon;
+        justify-self: center;
 }
 
 .download-app-text {
-    grid-area: text;
-    font-size: 0.65rem;
-    line-height: 1;
-    opacity: 0.95;
+        grid-area: text;
+        font-size: 0.62rem;
+        line-height: 1;
+        opacity: 0.95;
+        color: rgba(255,255,255,0.92);
 }
 
 .download-app-store {
-    grid-area: store;
-    font-size: 1.05rem;
-    font-weight: 800;
-    line-height: 1;
+        grid-area: store;
+        font-size: 1.15rem;
+        font-weight: 800;
+        line-height: 1;
 }
 
 .btn-googlePlay-text-small {
@@ -409,49 +414,49 @@ h6 {
 }
 
 .hero-image {
-    max-width: 350px;
-    z-index: 3;
+        max-width: 480px;
+        z-index: 3;
 }
 
 .hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 32px;
-    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(99, 102, 241, 0.12);
 }
 
 
 /* Brands Section */
 .Brands {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2.5rem 0 2.5rem 0;
-    background: var(--color-body-background);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        background: var(--color-body-background);
 }
 
 .Brands .brand-list {
-    display: flex;
-    gap: 2rem;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+        display: flex;
+        gap: 1.5rem;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
 }
 
 .Brands .brand-item {
-    background: var(--brand-item-bg);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.04);
-    padding: 1.5rem 2.5rem;
-    display: flex;
-    align-items: center;
-    min-width: 120px;
-    min-height: 64px;
-    transition: box-shadow 0.2s;
-    flex: 1 1 180px;
-    max-width: 220px;
-    box-sizing: border-box;
+        background: var(--brand-item-bg);
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.04);
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        min-width: 110px;
+        min-height: 56px;
+        transition: box-shadow 0.18s;
+        flex: 0 1 auto;
+        box-sizing: border-box;
 }
 
 /* Responsive: icon-only buttons on small screens */
@@ -517,26 +522,27 @@ h6 {
 
 /* Features utilities */
 .section-title {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--color-heading-text);
-    margin-bottom: 0.5rem;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-heading-text);
+        margin-bottom: 0.5rem;
 }
 
 .section-lead {
-    font-size: 1rem;
-    color: var(--color-body-text);
-    margin-bottom: 1rem;
+        font-size: 1.05rem;
+        color: var(--color-body-text);
+        margin-bottom: 1rem;
+        max-width: 700px;
 }
 
 /* Features */
 .Features .features-grid,
 .AppFeatures .appfeatures-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    padding: 3rem 0;
+        display: grid;
+        grid-template-columns: 1fr 520px;
+        gap: 2.25rem;
+        align-items: center;
+        padding: 3rem 0;
 }
 
 .Features .features-image img,
@@ -564,17 +570,17 @@ h6 {
 
 .feature-items img,
 .appfeature-items img {
-    width: 40px;
-    height: 40px;
+        width: 48px;
+        height: 48px;
 }
 
 /* How-Does-It-Work */
 .How-Does-It-Work .how-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    padding: 3rem 0;
+        display: grid;
+        grid-template-columns: 1fr 480px;
+        gap: 2rem;
+        align-items: center;
+        padding: 3rem 0;
 }
 
 .How-Does-It-Work .how-image {
@@ -600,17 +606,17 @@ goes under here! */
 
 /* Testimonials */
 .Testimonials .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    padding: 3rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 3rem 0;
 }
 
 .testimonial {
-    background: var(--color-login-box-bg);
-    border-radius: 12px;
-    padding: 1.25rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        background: var(--color-login-box-bg);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 36px rgba(16,24,40,0.06);
 }
 
 .testimonial img {
@@ -632,10 +638,10 @@ goes under here! */
 
 /* FAQ */
 .FAQ .faq-list details {
-    background: var(--color-login-box-bg);
-    padding: 0.9rem 1rem;
-    border-radius: 10px;
-    margin-bottom: 0.75rem;
+        background: var(--color-login-box-bg);
+        padding: 1rem 1.15rem;
+        border-radius: 10px;
+        margin-bottom: 0.9rem;
 }
 
 .FAQ summary {
@@ -645,11 +651,12 @@ goes under here! */
 
 /* Subscribe */
 .Subscribe .subscribe-box {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2.25rem 0;
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 0;
+        background: transparent;
 }
 
 .subscribe-form {
@@ -659,16 +666,17 @@ goes under here! */
 }
 
 .subscribe-form input[type="email"] {
-    padding: 0.6rem 0.75rem;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        border: 1px solid #e9e9ef;
+        min-width: 280px;
 }
 
 /* Footer */
 
 .site-footer {
-    padding: 2.25rem 0;
-    background: var(--color-login-container-bg);
+        padding: 2rem 0;
+        background: var(--color-login-container-bg);
 }
 
 .footer-grid {
