@@ -87,6 +87,7 @@
     padding-top: 5rem;
     min-height: 600px;
     overflow: hidden;
+    background: #ededed;
 }
 .hero-bg {
     position: absolute;
@@ -103,8 +104,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 60% 40%, #e0e7ff 0%, #6366F1 60%, #0B0F19 100%);
-    opacity: 0.7;
+    background: radial-gradient(circle at 60% 40%, #ededed 0%, #ededed 100%);
+    opacity: 1;
     z-index: 1;
 }
 .hero-shape {
@@ -204,42 +205,69 @@
 
 }
 
-html, body {
-    scroll-behavior: smooth;
-    .hero-shape-1 {
-
-    color: var(--text-color);
-    background-color: var(--background-color);
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    font-style: normal;
-    .hero-shape-2 {
-    line-height: 1.5;
-
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-text-color);
-    margin: 0 0 1rem 0;
-    .hero .container, .hero-area, .hero-content, .hero-image {
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-button, .btn {
+/* Button CSS */
+.signin-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    height: 40px;
-
-
-    background-color: var(--color-button-background);
-    color: var(--button-text);
-    border: 1px solid var(--color-button-border);
-    padding: 10px 20px;
+    gap: 0.5rem;
+    background: #6366F1;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1rem;
     text-decoration: none;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.12);
+    border: none;
+    transition: background 0.2s;
+}
+.signin-btn:hover {
+    background: #4f46e5;
+}
+.signin-icon {
+    width: 24px;
+    height: 24px;
+}
+.signin-text {
+    font-size: 1rem;
+    font-weight: 700;
+}
+.darkmode-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e5e7eb;
+    color: #18181b;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-size: 1rem;
+}
+.darkmode-btn .darkmode-icon {
+    width: 24px;
+    height: 24px;
+    background: url('/silicon/assets/darkmode_icon.png') center/cover no-repeat;
+    display: inline-block;
+}
+.darkmode-btn.on {
+    background: #6366F1;
+    color: #fff;
+}
+.darkmode-btn.on .darkmode-icon {
+    filter: invert(1);
+}
+.darkmode-btn .darkmode-label {
+    font-size: 1rem;
+}
+.darkmode {
+    background: #18181b !important;
+}
+.darkmode .hero {
+    background: radial-gradient(circle at 60% 40%, #18181b 0%, #6366F1 60%, #0B0F19 100%);
+}
 
     border-radius: 4px;
     cursor: pointer;
