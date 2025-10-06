@@ -50,14 +50,14 @@
                <p class="hero-ingress">We offer you a new generation of the mobile banking. Save, spend & manage money in your pocket.</p>
                <div class="hero-buttons">
                   <a href="#" class="btn-download appstore">
-                     <img class="download-app-icon" src="/silicon/assets/AppFeatures/icons/credit-card.svg" alt="Apple Icon">
+                     <img class="download-app-icon" src="/silicon/assets/Hero/appStore_icon.svg" alt="App Store Icon">
                      <div class="download-text">
                         <div class="download-app-text">Download on the</div>
                         <div class="download-app-store">App Store</div>
                      </div>
                   </a>
                   <a href="#" class="btn-download googleplay">
-                     <img class="download-googlePlay-image" src="/silicon/assets/AppFeatures/icons/wallet.svg" alt="Google Play Icon">
+                     <img class="download-googlePlay-image" src="/silicon/assets/Hero/googlePlay_icon.svg" alt="Google Play Icon">
                      <div class="download-text">
                         <div class="btn-googlePlay-text-small">Get it on</div>
                         <div class="btn-googlePlay-text">Google Play</div>
@@ -66,7 +66,7 @@
                </div>
             </div>
             <div class="hero-image">
-               <img src="/silicon/assets/Features/phone_image.svg" alt="Hero Image">
+               <img src="/silicon/assets/Hero/hero_image.svg" alt="Hero Image">
             </div>
          </div>
       </div>
@@ -327,6 +327,11 @@
                   if (toggleIcon) toggleIcon.src = '/silicon/assets/Header/toggle_icon_light.svg';
                }
             });
+               // set initial toggle icon on load
+               if (toggleIcon) {
+                  if (document.body.classList.contains('darkmode')) toggleIcon.src = '/silicon/assets/Header/toggle_icon_darkmode.svg';
+                  else toggleIcon.src = '/silicon/assets/Header/toggle_icon_light.svg';
+               }
          })();
       </script>
 </body>

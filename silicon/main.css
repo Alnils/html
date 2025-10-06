@@ -96,19 +96,19 @@ h6 {
 }
 
 .signin-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: var(--color-button-background);
-        color: var(--color-button-text);
-        padding: 0.45rem 0.9rem;
-        border-radius: 18px;
-        font-weight: 700;
-        font-size: 0.95rem;
-        text-decoration: none;
-        box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
-        border: none;
-        transition: background 0.18s, transform 0.12s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-button-background);
+    color: var(--color-button-text);
+    padding: 0.45rem 0.9rem;
+    border-radius: 4px; /* barely visible corner */
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+    border: none;
+    transition: background 0.18s, transform 0.12s;
 }
 
 .signin-btn:hover {
@@ -127,29 +127,26 @@ h6 {
 }
 
 .darkmode-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: var(--color-darkmode-btn-bg);
-        color: var(--color-darkmode-btn-text);
-        border: none;
-        border-radius: 18px;
-        padding: 0.45rem 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.18s, color 0.18s, transform 0.12s;
-        font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent; /* remove background color */
+    color: var(--color-darkmode-btn-text);
+    border: none; /* remove border */
+    border-radius: 0; /* minimal corner */
+    padding: 0; /* size handled by toggle icon */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s, transform 0.08s;
+    font-size: 0.95rem;
 }
 
 .darkmode-btn .darkmode-icon {
-    width: 24px;
-    height: 24px;
-    background: url('/silicon/assets/darkmode_icon.png') center/cover no-repeat;
-    display: inline-block;
+    display: none; /* no inline bg image; we use .toggle-icon img instead */
 }
 
 /* Use header toggle images and swap in darkmode via CSS */
-.toggle-icon { width:22px; height:22px; display:inline-block; }
+.toggle-icon { width:46px; height:24px; display:inline-block; }
 .darkmode .toggle-icon { content: url('/silicon/assets/Header/toggle_icon_darkmode.svg'); }
 .darkmode .logotype img { content: url('/silicon/assets/Header/silicon_icon_text_darkmode.svg'); }
 
@@ -264,13 +261,16 @@ h6 {
 }
 
     /* Hero adjustments */
-    .hero-title { font-size: 3.6rem; font-weight: 900; color: var(--color-heading-text); margin-bottom: 0.125rem; letter-spacing: -0.015em; text-shadow: 0 6px 20px rgba(11,15,25,0.08); }
+    .hero-title { font-size: 4rem; font-weight: 900; color: var(--color-heading-text); margin-bottom: 0.125rem; letter-spacing: -0.02em; text-shadow: 0 12px 36px rgba(11,15,25,0.12); }
     .hero-ingress { font-size: 1.125rem; color: var(--color-body-text); margin-bottom: 0.75rem; max-width: 560px; }
     .hero-buttons { display: flex; gap: 1.25rem; margin-top: 1rem; }
-    .btn-download { display: grid; grid-template-columns: 56px 1fr; grid-template-areas: "icon text" "icon store"; background-color: var(--color-button-download-background); color: var(--color-button-download-text); border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 6px 20px rgba(16,24,40,0.06); transition: background .16s, transform .12s; align-items: center; padding: 0.5rem 1rem; column-gap: 0.8rem; width: 180px; height: 52px; }
-    .download-app-icon { height: 28px; width: auto; grid-area: icon; justify-self: center; }
-    .download-googlePlay-image { height: 28px; width: auto; grid-area: icon; justify-self: center; }
-    .download-app-store { grid-area: store; font-size: 1.05rem; font-weight: 800; line-height: 1; }
+    /* compact single-line download button layout */
+    .btn-download { display: grid; grid-template-columns: 56px 1fr; grid-template-areas: "icon text"; background-color: var(--color-button-download-background); color: var(--color-button-download-text); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 6px 18px rgba(16,24,40,0.06); transition: background .16s, transform .12s; align-items: center; padding: 0.4rem 0.75rem; column-gap: 0.6rem; width: 180px; height: 52px; }
+    .download-app-icon { height: 24px; width: auto; grid-area: icon; justify-self: center; }
+    .download-googlePlay-image { height: 24px; width: auto; grid-area: icon; justify-self: center; }
+    .download-text { grid-area: text; display:flex; align-items:center; gap:6px; }
+    .download-app-text, .btn-googlePlay-text-small { font-size:0.72rem; opacity:0.95; }
+    .download-app-store, .btn-googlePlay-text { font-size:1rem; font-weight:800; }
 
 .hero-bg {
     position: absolute;
@@ -436,19 +436,11 @@ h6 {
     .hero-buttons { margin-top: 0.25rem; }
 }
 
-.hero-image {
-        max-width: 480px;
-        z-index: 3;
-}
-    .hero-image { max-width: 648px; flex: 0 0 50%; z-index: 3; }
-    .hero-image img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 20px 60px rgba(99,102,241,0.12); }
-
-.hero-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 24px;
-        box-shadow: 0 20px 60px rgba(99, 102, 241, 0.12);
-}
+.hero-image { max-width: 648px; flex: 0 0 50%; z-index: 3; position: absolute; right: 0; top: 0; bottom: 0; height: 100%; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 0 12px 12px 0; box-shadow: 0 20px 60px rgba(99,102,241,0.12); display:block; }
+.hero { overflow: hidden; }
+.hero-area { position: relative; padding-right: 50%; }
+.hero-content { position: relative; z-index: 4; max-width: 560px; }
 
 
 /* Brands Section */
