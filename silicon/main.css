@@ -102,7 +102,7 @@ h6 {
     background: var(--color-button-background);
     color: var(--color-button-text);
     padding: 0.45rem 0.9rem;
-    border-radius: 4px; /* barely visible corner */
+    border-radius: 4px; 
     font-weight: 700;
     font-size: 0.95rem;
     text-decoration: none;
@@ -130,11 +130,11 @@ h6 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: transparent; /* remove background color */
+    background: transparent; 
     color: var(--color-darkmode-btn-text);
-    border: none; /* remove border */
-    border-radius: 0; /* minimal corner */
-    padding: 0; /* size handled by toggle icon */
+    border: none; 
+    border-radius: 0; 
+    padding: 0; 
     font-weight: 600;
     cursor: pointer;
     transition: background 0.12s, color 0.12s, transform 0.08s;
@@ -142,7 +142,7 @@ h6 {
 }
 
 .darkmode-btn .darkmode-icon {
-    display: none; /* no inline bg image; we use .toggle-icon img instead */
+    display: none; 
 }
 
 /* Use header toggle images and swap in darkmode via CSS */
@@ -260,11 +260,11 @@ h6 {
         background: var(--color-body-background);
 }
 
-    /* Hero adjustments */
+    /* Hero  */
     .hero-title { font-size: 4rem; font-weight: 900; color: var(--color-heading-text); margin-bottom: 0.125rem; letter-spacing: -0.02em; text-shadow: 0 12px 36px rgba(11,15,25,0.12); }
     .hero-ingress { font-size: 1.125rem; color: var(--color-body-text); margin-bottom: 0.75rem; max-width: 560px; }
     .hero-buttons { display: flex; gap: 1.25rem; margin-top: 1rem; }
-    /* compact single-line download button layout */
+    /* download button layout */
     .btn-download { display: grid; grid-template-columns: 56px 1fr; grid-template-areas: "icon text"; background-color: var(--color-button-download-background); color: var(--color-button-download-text); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 6px 18px rgba(16,24,40,0.06); transition: background .16s, transform .12s; align-items: center; padding: 0.4rem 0.75rem; column-gap: 0.6rem; width: 180px; height: 52px; }
     .download-app-icon { height: 24px; width: auto; grid-area: icon; justify-self: center; }
     .download-googlePlay-image { height: 24px; width: auto; grid-area: icon; justify-self: center; }
