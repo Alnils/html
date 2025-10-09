@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <!-- lightweight header with darkmode toggle so login page can control theme -->
+    <header style="display:flex; justify-content:flex-end; padding:1rem;">
+        <button id="darkmode-toggle" class="darkmode-btn" aria-label="Toggle dark mode">
+            <span class="darkmode-label">Dark Mode</span>
+            <img class="toggle-icon" src="assets/1-Header/toggle_icon_light.svg" alt="toggle">
+        </button>
+    </header>
     <div class="login-container">
         <div class="login-box">
             <h1 class="login-title">Sign In</h1>
@@ -21,5 +28,33 @@
         </div>
     </div>
 <div id="smiley" style="text-align:center; margin-top:2rem; font-size:2rem;">:)</div>
+    <script>
+    // Apply saved theme on load and keep toggle icon consistent
+    (function(){
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark') document.body.classList.add('darkmode');
+        else if (saved === 'light') document.body.classList.remove('darkmode');
+
+        const darkToggle = document.getElementById('darkmode-toggle');
+        const toggleIcon = darkToggle ? darkToggle.querySelector('.toggle-icon') : null;
+
+        function applyToggleIcon() {
+            if (!toggleIcon) return;
+            if (document.body.classList.contains('darkmode')) toggleIcon.src = 'assets/1-Header/toggle_icon_darkmode.svg';
+            else toggleIcon.src = 'assets/1-Header/toggle_icon_light.svg';
+        }
+
+        applyToggleIcon();
+
+        if (darkToggle) {
+            darkToggle.addEventListener('click', () => {
+                const isDark = document.body.classList.toggle('darkmode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                applyToggleIcon();
+            });
+        }
+    })();
+</script>
 </body>
 </html>
+

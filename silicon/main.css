@@ -147,8 +147,8 @@ h6 {
 
 /* Use header toggle images and swap in darkmode via CSS */
 .toggle-icon { width:46px; height:24px; display:inline-block; }
-.darkmode .toggle-icon { content: url('/silicon/assets/Header/toggle_icon_darkmode.svg'); }
-.darkmode .logotype img { content: url('/silicon/assets/Header/silicon_icon_text_darkmode.svg'); }
+.darkmode .toggle-icon { content: url('assets/1-Header/toggle_icon_darkmode.svg'); }
+.darkmode .logotype img { content: url('assets/1-Header/silicon_icon_text_darkmode.svg'); }
 
 .darkmode-btn.on {
     background: var(--color-button-background);
@@ -164,6 +164,22 @@ h6 {
 }
 
 /* Darkmode helper (body gets .darkmode class; colors mapped with variables) */
+/* Move theme values into CSS variables so JS only toggles the class and persistence is handled via localStorage */
+body.darkmode {
+    --color-body-background: #18181b;
+    --color-body-text: #e5e7eb;
+    --color-heading-text: #fafafa;
+    --color-button-background: #6366F1;
+    --color-button-text: #ffffff;
+    --color-button-download-background: #6366F1;
+    --color-button-download-text: #ffffff;
+    --color-darkmode-btn-bg: #4b5563;
+    --color-darkmode-btn-text: #ffffff;
+    --color-login-container-bg: #0b0f19;
+    --color-login-box-bg: #0b0f19;
+    --brand-item-bg: #0f1724;
+}
+
 .darkmode {
     background: var(--color-body-background) !important;
 }
@@ -518,6 +534,34 @@ h6 {
     }
 }
 
+/* Mobile-first adjustments: ensure sections stack and images scale on small screens */
+@media (max-width: 768px) {
+    .hero-area {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding-right: 0;
+    }
+    .hero-image {
+        position: static;
+        width: 100%;
+        height: auto;
+        order: 2;
+        margin-top: 1rem;
+        padding: 0 1rem;
+    }
+    .hero-content { order: 1; padding: 0 1rem; max-width: 100%; }
+    .hero-title { font-size: 2rem; }
+
+    .features-grid, .AppFeatures .appfeatures-grid, .How-Does-It-Work .how-grid, .testimonials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .Brands .brand-box { width: 140px; height: 80px; }
+}
+
 .Brands .brand-item:hover {
     box-shadow: 0 4px 16px rgba(99, 102, 241, 0.10);
 }
@@ -621,6 +665,26 @@ h6 {
 
 .how-steps li {
     margin-bottom: 1rem;
+}
+
+/* Small responsive and alignment tweaks requested */
+.hero-image img,
+.features-image img,
+.appfeatures-image img,
+.testimonial-img,
+.brand-logo,
+.subscribe-icon {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.brand-box { display:flex; align-items:center; justify-content:center; }
+
+/* Make subscribe box stack on smaller screens */
+@media (max-width: 768px) {
+    .Subscribe .subscribe-box { flex-direction: column; align-items: center; text-align: center; }
+    .hero-area { padding-right: 0; }
 }
 
 /* AppFeatures
