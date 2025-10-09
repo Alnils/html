@@ -1,11 +1,3 @@
-/* 
-
-ADD NEW STYLES CLOSE TO RELATED STYLES IF RELATED STYLES EXIST
-STACK RELATED STYLES TOGETHER FOR BETTER READABILITY IF POSSIBLE
-MAKE SURE THE STRUCTURE AND HIERARCHY OF THE CSS FILE IS EASILY READABLE AND COLLAPSABLE BY SECTION, USE index.html FOR REFERENCE IF NEEDED
-
- */
-
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
@@ -69,7 +61,6 @@ h6 {
     padding-right: 2rem;
 }
 
-/* Wide container for design-locked sections (no horizontal padding, max width 1296) */
 .container--wide {
     max-width: 1296px;
     margin: 0 auto;
@@ -275,7 +266,6 @@ body.darkmode {
         background: var(--color-body-background);
 }
 
-    /* Hero  */
     .hero-title { font-size: 4rem; font-weight: 900; color: var(--color-heading-text); margin-bottom: 0.125rem; letter-spacing: -0.02em; text-shadow: 0 12px 36px rgba(11,15,25,0.12); }
     .hero-ingress { font-size: 1.125rem; color: var(--color-body-text); margin-bottom: 0.75rem; max-width: 560px; }
     .hero-buttons { display: flex; gap: 1.25rem; margin-top: 1rem; }
@@ -437,7 +427,6 @@ body.darkmode {
     line-height: 1;
 }
 
-/* Make the text block line up better with the icon visually by ensuring left alignment */
 .btn-download > .download-app-text,
 .btn-download > .btn-googlePlay-text-small,
 .btn-download > .download-app-store,
@@ -445,7 +434,6 @@ body.darkmode {
     text-align: left;
 }
 
-/* Slightly reduce gap between ingress and buttons (desktop too) */
 @media (min-width: 769px) {
     .hero-ingress { margin-bottom: 0.75rem; }
     .hero-buttons { margin-top: 0.25rem; }
@@ -485,13 +473,10 @@ body.darkmode {
         align-items: center;
 }
 
-/* Ensure Brands are visually below hero and never covered */
 .hero + .Brands, .hero .Brands, .Brands { clear: both; margin-top: 1.5rem; }
 
-/* Center content blocks by default */
 .container, .container--wide { display: block; margin-left: auto; margin-right: auto; }
 
-/* Make sure all feature images and hero scale responsively */
 .hero-image img, .features-image img, .appfeatures-image img, .how-images img, .testimonial-img, .brand-logo, .subscribe-icon { max-width: 100%; height: auto; display: block; }
 
 .Brands .brand-item {
@@ -530,7 +515,6 @@ body.darkmode {
         display: inline-block;
     }
 
-    /* Make download buttons more compact on small screens */
     .btn-download {
         padding: 0.5rem 0.75rem;
         column-gap: 0.5rem;
