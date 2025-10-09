@@ -163,8 +163,7 @@ h6 {
     font-size: 1rem;
 }
 
-/* Darkmode helper (body gets .darkmode class; colors mapped with variables) */
-/* Move theme values into CSS variables so JS only toggles the class and persistence is handled via localStorage */
+/* Darkmode */
 body.darkmode {
     --color-body-background: #18181b;
     --color-body-text: #e5e7eb;
@@ -534,7 +533,6 @@ body.darkmode {
     }
 }
 
-/* Mobile-first adjustments: ensure sections stack and images scale on small screens */
 @media (max-width: 768px) {
     .hero-area {
         display: flex;
@@ -667,7 +665,6 @@ body.darkmode {
     margin-bottom: 1rem;
 }
 
-/* Small responsive and alignment tweaks requested */
 .hero-image img,
 .features-image img,
 .appfeatures-image img,
@@ -681,15 +678,10 @@ body.darkmode {
 
 .brand-box { display:flex; align-items:center; justify-content:center; }
 
-/* Make subscribe box stack on smaller screens */
 @media (max-width: 768px) {
     .Subscribe .subscribe-box { flex-direction: column; align-items: center; text-align: center; }
     .hero-area { padding-right: 0; }
 }
-
-/* AppFeatures
-goes under here! */
-
 
 
 
